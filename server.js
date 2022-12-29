@@ -8,8 +8,8 @@ global.bodyParser = require('body-parser');
 dotenv.config()
 
 
-const port = process.env.PORT || 5000;
-const url = process.env.URL;
+const port = process.env.PORT;
+const url = process.env.URL || 3000;
 
 
 //------------------- SOME UNKNOWN CODE  -------------------
