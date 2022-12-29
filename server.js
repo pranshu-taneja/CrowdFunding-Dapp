@@ -8,7 +8,7 @@ global.bodyParser = require('body-parser');
 dotenv.config()
 
 
-const port = process.env.PORT;
+const port = process.env.PORT || 5000;
 const url = process.env.URL;
 
 
@@ -90,3 +90,6 @@ app.listen(port, async() => console.log(`Express server listening on PORT ${port
 mongoose.connection.on("open",()=>{
     console.log("Connected To the Remote Database!!")
 })
+
+
+module.exports = app;
