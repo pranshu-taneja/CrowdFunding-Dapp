@@ -71,7 +71,8 @@ function App() {
       const provider = new ethers.providers.Web3Provider(window.ethereum);
       // const accounts = await provider.send("eth_requestAccounts", []);
       const signer = provider.getSigner();
-      const contract = new ethers.Contract("0x06eCfcee0cAb51decc069b115B187DB6f18C8a44",abi, Provider)
+      const contract = new ethers.Contract("0xafB03aafB3dB11AE4470463B9ff3eB6E302Dc20B",abi, Provider)      //Here its the address of contract on the test net blockchain
+      // 0x06eCfcee0cAb51decc069b115B187DB6f18C8a44       //ganache local blockchain contract deployed address 
 
 
       setProvider(provider)

@@ -10,7 +10,6 @@ dotenv.config()
 
 const port = process.env.PORT;
 const url = process.env.URL;
-const data = require('./data/data_json')
 
 
 //------------------- SOME UNKNOWN CODE  -------------------
@@ -57,7 +56,6 @@ connect();
 
 //get requests
 app.get('/', (req, res) => res.send('Hello World!'))
-// app.get('/data', (req,res)=> {res.json(data)})              //will give you the local stored file data
 app.get('/demo', async(req,res)=> {                             //will give you the mongodb local stored db data
     const fetched_data = await db.find({});                         
     res.json(fetched_data)
@@ -90,5 +88,5 @@ app.listen(port, async() => console.log(`Express server listening on PORT ${port
 
 //testing mongoose (YOU can pass event like open, error etc)
 mongoose.connection.on("open",()=>{
-    console.log("Mongoose connected TO local!!")
+    console.log("Connected To the Remote Database!!")
 })
