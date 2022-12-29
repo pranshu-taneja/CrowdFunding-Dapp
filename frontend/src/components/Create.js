@@ -1,22 +1,47 @@
 import React from 'react'
+import axios from 'axios'
+
 
 function Create() {
 
-  const SendCreate = ()=>{
+  const SendingReal = async () => {
+    const userObject = {
+      acc: document.getElementById('accN').value,
+    };
 
-  }
+    axios
+      .post("http://localhost:5000/upload", userObject)
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
+  // const DBdata = async () => {
+  //   axios
+  //     .get("http://localhost:5000/demo")
+  //     .then((res) => {
+  //       console.log(res); //use res.data for exact data btw
+  //     })
+  //     .catch((err) => {
+  //       console.log(err);
+  //     });
+  // };
 
   return (
     <div>
         <h1>This is the Create Page</h1>
-        <form action="" className='createProject'>
+        
           <div className="addAcc">
             <label htmlFor="accN">Account No : - </label>
-            <input type="text" className='accN' />
+            <input type="text" className='accN' id='accN'/>
           </div>
 
-          <button type='Submit' onClick={SendCreate}>Create Project</button>
-        </form>
+          <button type='Submit' onClick={SendingReal}>Create Project</button>
+
+        {/* <button type='submit' onClick={DBdata}>Get Data from DB</button> */}
     </div>
   )
 }

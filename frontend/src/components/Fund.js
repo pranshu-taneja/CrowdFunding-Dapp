@@ -1,51 +1,46 @@
 import FlexProject from "./FlexProject";
 import { v4 as uuidv4 } from "uuid";
-import data from "./data.json";
-import axios from 'axios'
+import axios from "axios";
+import React from "react";
+import { useState, useEffect } from "react";
 
 function Fund(props) {
-  // const [Projects, setProjects] = useState([])
-
   const Provider = props.Provider;
   const Contract = props.Contract;
   const Signer = props.Signer;
+  const [fetchdata, setFetchdata] = useState([]);
+  const [loading, setLoading] = useState(true);         //will tell if data is loaded or not
 
-  const create = async () => {
-    let accN = await document.getElementById("accN").value;
-    let e = { acc: accN };
-    data.push(e);
-    console.log("data:", data);
-  };
 
-  const render = data.map((post) => {
-    return (
-      <FlexProject
-        key={uuidv4()}
-        Provider={Provider}
-        Signer={Signer}
-        Contract={Contract}
-        AccN={post.acc}
-      ></FlexProject>
-    );
-  });
-
-  const success = async () => {
-   const one = await axios.get('/demo')
-   console.log(one.data);
-  };
+  useEffect(() => {
+    axios
+      .get("/demo")
+      .then((res) => {
+        setFetchdata(res.data);
+        setLoading(false);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, []);
 
   return (
     <div className="App">
-      <input id="accN" type="text" />
-      <button id="create" onClick={create}>
-        CreateProject
-      </button>
-      <button id="success" onClick={success}>
-        Success
-      </button>
-      <div className="Projects" id="pro">
-        {render}
+
+      <div className="Projects" id="pro">           {/*//rendering flex projects from db data fetched came through*/}
+        {fetchdata.map((data1) => (
+          <FlexProject
+            key={uuidv4()}
+            Provider={Provider}
+            Signer={Signer}
+            Contract={Contract}
+            AccN={data1.acc}
+          ></FlexProject>
+        ))}
       </div>
+
+      
+    
     </div>
   );
 }
