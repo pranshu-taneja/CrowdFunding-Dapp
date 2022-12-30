@@ -14,7 +14,7 @@ function Fund(props) {
 
   useEffect(() => {
     axios
-      .get("/demo")
+      .get("https://crowd-funding-dapp-virid.vercel.app/api/demo")
       .then((res) => {
         setFetchdata(res.data);
         setLoading(false);
