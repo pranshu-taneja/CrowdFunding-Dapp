@@ -8,7 +8,7 @@ global.bodyParser = require('body-parser');
 dotenv.config()
 
 
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 5000;
 const url = process.env.URL;
 
 
@@ -55,15 +55,15 @@ async function connect(){
 connect();
 
 //get requests
-app.get('/api', (req, res) => res.send('Hello World!'))
-app.get('/api/demo', async(req,res)=> {                             //will give you the mongodb local stored db data
+app.get('/', (req, res) => res.send('Hello World!'))
+app.get('/demo', async(req,res)=> {                             //will give you the mongodb local stored db data
     const fetched_data = await db.find({});                         
     res.json(fetched_data)
 })
 
 
-//post requests
-app.post('/upload',(req,res)=>{          //to upload data just now find a wat to pass data from frontend to server backend that's it
+//post requestsx
+app.post('/upload',(req,res)=>{          //to upload data just now find a way to pass data from frontend to server backend that's it
     const user = new db(
         {acc: req.body.acc},
         {versionKey:false}
@@ -82,6 +82,7 @@ app.post('/upload',(req,res)=>{          //to upload data just now find a wat to
             });
     })
 })
+
 
 app.listen(port, async() => console.log(`Express server listening on PORT ${port}!`))
 
