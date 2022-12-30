@@ -55,8 +55,8 @@ async function connect(){
 connect();
 
 //get requests
-app.get('/', (req, res) => res.send('Hello World!'))
-app.get('/demo', async(req,res)=> {                             //will give you the mongodb local stored db data
+app.get('/api', (req, res) => res.send('Hello World!'))
+app.get('/api/demo', async(req,res)=> {                             //will give you the mongodb local stored db data
     const fetched_data = await db.find({});                         
     res.json(fetched_data)
 })
@@ -91,3 +91,4 @@ mongoose.connection.on("open",()=>{
     console.log("Connected To the Remote Database!!")
 })
 
+module.exports = app;
