@@ -76,7 +76,6 @@ function App() {
       setProvider(provider)
       setSigner(signer)
       setContract(contract)
-      console.log("Setting up providers")
     // }
   }
 
