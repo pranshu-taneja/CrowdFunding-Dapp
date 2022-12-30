@@ -55,15 +55,15 @@ async function connect(){
 connect();
 
 //get requests
-app.get('/', (req, res) => res.send('Hello World!'))
-app.get('/demo', async(req,res)=> {                             //will give you the mongodb local stored db data
+app.get('/api', (req, res) => res.send('Hello World!'))
+app.get('/api/demo', async(req,res)=> {                             //will give you the mongodb local stored db data
     const fetched_data = await db.find({});                         
     res.json(fetched_data)
 })
 
 
 //post requestsx
-app.post('/upload',(req,res)=>{          //to upload data just now find a way to pass data from frontend to server backend that's it
+app.post('/api/upload',(req,res)=>{          //to upload data just now find a way to pass data from frontend to server backend that's it
     const user = new db(
         {acc: req.body.acc},
         {versionKey:false}
