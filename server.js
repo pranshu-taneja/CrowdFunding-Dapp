@@ -91,5 +91,3 @@ mongoose.connection.on("open",()=>{
     console.log("Connected To the Remote Database!!")
 })
 
-
-module.exports = app;
