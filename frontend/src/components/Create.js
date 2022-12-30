@@ -10,7 +10,7 @@ function Create() {
     };
 
     axios
-      .post("https://crowd-funding-dapp-virid.vercel.app/upload", userObject)
+      .post("https://crowd-funding-dapp-virid.vercel.app/api/upload", userObject)
       .then((res) => {
         console.log(res);
       })
