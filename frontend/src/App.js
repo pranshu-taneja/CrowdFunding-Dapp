@@ -1,7 +1,8 @@
 import "./App.css";
-import Navbar from "./components/ResponsiveAppBar";
+import Navbar from "./components/Navbar";
 import Home from "./components/Home"
 import Fund from "./components/Fund"
+import Funding from "./components/Funding"
 import Create from "./components/Create"
 import {Routes, Route} from "react-router-dom"
 import { ethers } from "ethers"
@@ -65,19 +66,19 @@ function App() {
   const [Signer, setSigner] = useState()
   const [Contract, setContract] = useState()
   
-  const connect_metamask = async()=>{
-    // const connect_metamask = async()=>{
-      const provider = new ethers.providers.Web3Provider(window.ethereum);
-      const accounts = await provider.send("eth_requestAccounts", []);
-      const signer = provider.getSigner();
-      const contract = new ethers.Contract("0xafB03aafB3dB11AE4470463B9ff3eB6E302Dc20B",abi, Provider)      //Here its the address of contract on the test net blockchain
-      // 0x06eCfcee0cAb51decc069b115B187DB6f18C8a44       //ganache local blockchain contract deployed address 
+const connect_metamask = async()=>{
+  // const connect_metamask = async()=>{
+    const provider = new ethers.providers.Web3Provider(window.ethereum);
+    await provider.send("eth_requestAccounts", []);
+    const signer = provider.getSigner();
+    const contract = new ethers.Contract("0xafB03aafB3dB11AE4470463B9ff3eB6E302Dc20B",abi, Provider)      //Here its the address of contract on the test net blockchain
+    // 0x06eCfcee0cAb51decc069b115B187DB6f18C8a44       //ganache local blockchain contract deployed address 
 
-      setProvider(provider)
-      setSigner(signer)
-      setContract(contract)
-    // }
-  }
+    setProvider(provider)
+    setSigner(signer)
+    setContract(contract)
+  // }
+}
 
   useEffect(() => {             //now this will connect automatically just after page start
     connect_metamask();
@@ -89,13 +90,14 @@ function App() {
     <div className="App">
       {/* adding navbar to the page */}
       <Navbar></Navbar>
-      <button type="button" onClick={connect_metamask}>Connect</button>
+      <button type="button" onClick={connect_metamask} className="connect_metamask">Connect</button>
       <Routes>
         {/* So basically when you click any routing link then only the area is rendered rather than the whole page that's the advantage tbh */}
           <Route path="/" element={ <Home/> } />        
           <Route path="/Home" element={ <Home/> } />
-          <Route path="Fund" element={ <Fund Provider = {Provider} Signer = {Signer} Contract={Contract}/> } />
-          <Route path="Create" element={ <Create/> } />
+          <Route path="/Fund" element={ <Fund Provider = {Provider} Signer = {Signer} Contract={Contract}/> } />
+          <Route path="/Create" element={ <Create/> } />
+          <Route path="/Funding" element={ <Funding Provider = {Provider} Signer = {Signer} Contract={Contract}/> } />
       </Routes>
     </div>
   );

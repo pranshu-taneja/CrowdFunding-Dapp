@@ -3,8 +3,14 @@ const mongoose = require('mongoose')
 const Schema = mongoose.Schema;
 
 const UserSchema = new Schema(
-  {acc:String},
-  {versionKey:false}
+  {
+    acc:String,
+    protitle:String,
+    projdesc:String,
+    expdate:String,
+    amount:Number,
+    versionKey:false
+  }
 );
 
 // Compile model from schema

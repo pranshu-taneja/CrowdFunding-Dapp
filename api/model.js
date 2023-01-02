@@ -4,6 +4,10 @@ const Schema = mongoose.Schema;
 
 const UserSchema = new Schema(
   {acc:String},
+  {pro_title:String},
+  {exp_date:Date},
+  {proj_desc:String},
+  {amount:Number},
   {versionKey:false}
 );
 

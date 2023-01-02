@@ -1,7 +1,8 @@
 import React from 'react'
 import { useState,useEffect } from 'react'
-import './ProjectStyle.css';
+import './css/FlexProject.css';
 import { ethers } from 'ethers';
+import { Link } from "react-router-dom";
 
 function FlexProject(props) {
   
@@ -9,6 +10,7 @@ function FlexProject(props) {
   const Contract = props.Contract;
   const Signer = props.Signer;
   const AccN = props.AccN
+  const DD = props.dd
 
   const [data, setData] = useState({        //for storing the data of flexproject
     accN : null,
@@ -36,6 +38,7 @@ function FlexProject(props) {
   return (
     <div className='box'>
       <p className='address'>Account No:- {data.accN}</p>
+      <Link to="/Funding" state={{ propid: DD }}>Refer</Link>
       <input id='input_text' type="text"/>
       <button type='submit' onClick={Fund}>Fund</button>
     </div>

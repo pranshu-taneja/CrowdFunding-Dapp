@@ -29,18 +29,17 @@ function Fund(props) {
 
       <div className="Projects" id="pro">           {/*//rendering flex projects from db data fetched came through*/}
         {fetchdata.map((data1) => (
-          <FlexProject
-            key={uuidv4()}
-            Provider={Provider}
-            Signer={Signer}
-            Contract={Contract}
-            AccN={data1.acc}
-          ></FlexProject>
+            <FlexProject
+              key={uuidv4()}
+              Provider={Provider}
+              Signer={Signer}
+              Contract={Contract}
+              AccN={data1.acc}
+              dd = {data1}
+            ></FlexProject>
         ))}
       </div>
 
-      
-    
     </div>
   );
 }

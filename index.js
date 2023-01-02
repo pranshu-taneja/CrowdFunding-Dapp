@@ -64,23 +64,30 @@ app.get('/api/demo', async(req,res)=> {                             //will give 
 
 //post requestsx
 app.post('/api/upload',(req,res)=>{          //to upload data just now find a way to pass data from frontend to server backend that's it
-    const user = new db(
-        {acc: req.body.acc},
-        {versionKey:false}
-    );
-    user.save().then(result => {
-        res.status(201).json({
-            message: "User registered successfully!",
-            userCreated: {
-               acc: result.acc,
-            }
-        })
-    }).catch(err => {
-        console.log(err),
-            res.status(500).json({
-                error: err
-            });
-    })
+  console.log(req.body);
+  const user = new db(
+    {
+      acc: req.body.acc,
+      protitle: req.body.protitle,
+      expdate : req.body.expdate,
+      projdesc : req.body.projdesc,
+      amount : req.body.amount
+    }
+  );
+  user.save().then(result => {
+      res.status(201).json({
+          message: "User registered successfully!",
+          userCreated: {
+            result : result
+          }
+      })
+  }).catch(err => {
+      console.log(err),
+          res.status(500).json({
+              error: err
+          });
+  })
+
 })
 
 
