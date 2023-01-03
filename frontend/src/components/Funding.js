@@ -16,7 +16,7 @@ function Funding(props) {
 
     //------------------- sending ethers to some other account -------------------
     const Signer_trans = Contract.connect(Signer);        //making the transaction through Signer 
-    let amount = await document.getElementById("input_text").value;
+    let amount = await document.querySelector(".fundingInput").value;
     const options = {value: ethers.utils.parseEther(amount)}            //will be used as msg.value
     await Signer_trans.usage_send(id.acc, options);
     //------------------- sending ethers to some other account -------------------
@@ -26,16 +26,18 @@ function Funding(props) {
 
   return (
     <div className='FundingProject'>
-      {/* {console.log(id)} */}
-      <p>Address: {id.acc}</p>
-      <p>Title: {id.protitle}</p>
-      <p>Amount: {id.amount}</p>
-      <p>Description: {id.projdesc}</p>
-      <p>Expiry: {id.expdate}</p>
+      <div>
+        <img className='fundingimg' src="https://imageio.forbes.com/specials-images/imageserve/621e5699a4be707faf89aafa/0x0.jpg?format=jpg&width=1200" alt="" />
+        <p className='fundingAdd'>Address: {id.acc}</p>
+        <p className='fundingTitle'>Title: {id.protitle}</p>
+        <p className='fundingAmount'>Amount Needed: {id.amount}</p>
+        <p className='fundingDesc'>Description: {id.projdesc}</p>
+        <p className='fundingExp'>Expiry: {id.expdate}</p>
+        <input className='fundingInput' type="text"/>
+      </div>
 
-      <div className="passAmount">
-        <input id='input_text' type="text"/>
-        <button type='submit' onClick={Fund}>Fund</button>
+      <div className="fundingAmount">
+        <button className='fundingButton' type='submit' onClick={Fund}>Fund</button>
       </div>
       
     </div>

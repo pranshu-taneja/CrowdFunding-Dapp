@@ -73,9 +73,6 @@
   border-radius: 1.3rem;
   background-color: #47ffa6;
   opacity: 1;
-  position: absolute;
-  bottom: 3rem;
-  right: 7rem;
 }
 .create_btn:active{
   opacity: 0.7;

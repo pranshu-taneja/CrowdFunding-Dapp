@@ -7,24 +7,97 @@ body {
 }
 
 .box {
-    width: 15rem;
-    height: 20rem;
+    width: 18rem;
+    height: 28rem;
     margin: 2rem;
     text-align: center;
     transition: all 0.3s;
     overflow-wrap: break-word;
     box-shadow: 2px 2px 10px rgb(81, 81, 81);
-    /* background-color: rgb(90, 225, 149); */
-
+    
     background: rgba(255, 255, 255, 0.25);
     box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-    backdrop-filter: blur(4px);
-    -webkit-backdrop-filter: blur(4px);
+    backdrop-filter: blur(12px);
     border-radius: 10px;
     border: 1px solid rgba(255, 255, 255, 0.18);
 }
 
+.box:hover{
+    border: 1px solid #ffffff44;
+    translate: 0px -10px;
+}
 
-.box:hover {
-    transform: translate(0rem, -0.5rem);
+.bg{
+    z-index: -1;
+    position: fixed;
+    opacity: 0.3;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+h1{
+    font-size: 15rem;
+    color: black;
+    filter: opacity(0.3);
+  }
+
+
+.fleximg{
+    width: 14rem;
+    height: 15rem;
+    margin: 0.5rem 0rem;
+    object-fit: cover;
+    border-radius: inherit;
+}
+
+.flextitle{
+    margin: 0rem 2rem;
+    font-size: 1.3rem;
+    color: white;
+    text-align: left;
+}
+
+.flexdesc{
+    margin: 0.5rem 2rem;
+    font-size: 0.8rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: white;
+    text-align: left;
+}
+
+.flexamount{
+    margin: 0rem 2rem;
+    font-size: 1rem;
+    color: white;    
+}
+
+
+.FlexFund{
+    padding: 0.4rem 0.8rem;
+    font-size: 1rem;
+    position: relative;
+    left: 3.5rem;
+    border-radius: 1.3rem;
+    background-color: #47ffa6;
+    text-align: center;
+    opacity: 1;
+}
+
+.flexexp{
+    color: white;
+}
+
+.LinkFund{
+    text-decoration: none;
+    color: black;
+}
+
+.FlexAmntExp{
+    text-align: start;
+    margin: 1rem 0rem;
+}
+
+.watchlogo{
+    text-decoration: none;
+    font-size: 1.1rem;
 }
