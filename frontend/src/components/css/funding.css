@@ -25,7 +25,7 @@
     margin: 3rem 2rem;
 
     font-family: 'poppins';
-    font-size: 1.3rem;
+    font-size: 1.1rem;
     color: #252528;
 }
 
@@ -35,7 +35,7 @@
     margin: 6rem 2rem;
 
     font-family: 'poppins';
-    font-size: 1.3rem;
+    font-size: 1.1rem;
     color: #252528;
 }
 
@@ -45,7 +45,7 @@
     margin: 9rem 2rem;
     
     font-family: 'poppins';
-    font-size: 1.3rem;
+    font-size: 1.1rem;
     color: #252528;
 }
 
@@ -55,7 +55,7 @@
     margin: 12rem 2rem;
     
     font-family: 'poppins';
-    font-size: 1.3rem;
+    font-size: 1.1rem;
     color: #252528;
 }
 
@@ -65,7 +65,7 @@
     margin: 19rem 2rem;
     
     font-family: 'poppins';
-    font-size: 1.3rem;
+    font-size: 1.1rem;
     color: #252528;
 }
 
@@ -75,14 +75,14 @@
     margin: 22rem 2rem;
     
     font-family: 'poppins';
-    font-size: 1.3rem;
+    font-size: 1.1rem;
     color: #252528;
 }
 
 .fundingButton{
     padding: 0.6rem 1.9rem;
     font-size: 1.4rem;
-    border-radius: 1.3rem;
+    border-radius: 1.1rem;
     background-color: #47ffa6;
     opacity: 1;
     position: relative;
