@@ -136,3 +136,39 @@ label{
     color: white;
     font-size: 1.5rem;
 }
+
+
+@media (max-width: 950px) {
+
+    .bar_create{
+        flex-direction: column;
+        height: 120vh;
+        width: 60vw;
+        justify-content: space-between;
+        align-items: center;
+        margin: 3.4rem 9.5rem;
+
+        position: relative;
+        z-index: 1;
+    }
+
+    .create_bar3{
+        align-items: center;
+    }
+
+    .create_bar{
+        display: flex;
+        /* height: 25rem; */
+        /* width: 15rem; */
+        /* display: flex; */
+        /* border-radius: 1rem; */
+        /* padding: 0.5rem 1.7rem; */
+        flex-direction: column;
+        /* justify-content: space-evenly; */
+        align-items: center;    
+    }
+
+    .proj_des{
+        width: 12rem;
+    }
+}

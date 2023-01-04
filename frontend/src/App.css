@@ -55,9 +55,14 @@
   opacity: 0.7;
 }
 
-@media (max-width: 700px) {
+@media (max-width: 950px) {
   .connect_metamask{
     position: static;
+  }
+
+  .Projects{
+    position: absolute;
+    z-index: -1;
   }
 }
 .Projects{

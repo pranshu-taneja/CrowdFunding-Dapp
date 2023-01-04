@@ -8,3 +8,10 @@
     filter: none;
 }
 
+
+@media (max-width: 950px) {
+
+    .page_title{
+        position: inherit;
+    }
+}
