@@ -27,10 +27,12 @@ function Create() {
     axios
       .post("https://crowd-funding-dapp-virid.vercel.app/api/upload", userObject)
       .then((res) => {
-        console.log(res);
+        // console.log(res);
+        alert("Project Created!")
       })
       .catch((error) => {
         console.log(error);
+        alert("Some Error Occured!")
       });
   };
 
@@ -64,7 +66,7 @@ function Create() {
             <label htmlFor="protitle">Project Title</label>
             <input
               type="text"
-              maxLength={35}
+              maxLength={17}
               className="protitle"
               value={title}
               onChange={(e) => settitle(e.target.value)}

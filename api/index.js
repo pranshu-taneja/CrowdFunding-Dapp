@@ -71,7 +71,8 @@ app.post('/api/upload',(req,res)=>{          //to upload data just now find a wa
       protitle: req.body.protitle,
       expdate : req.body.expdate,
       projdesc : req.body.projdesc,
-      amount : req.body.amount
+      amount : req.body.amount,
+      imgLink : req.body.imgLink
     }
   );
   user.save().then(result => {
