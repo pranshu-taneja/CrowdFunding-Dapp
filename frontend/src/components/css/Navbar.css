@@ -68,6 +68,9 @@
       justify-content: flex-end;
       box-shadow: none;
       border: none;
+      padding: 0rem;
+      position: relative;
+      z-index: 2;
     }
     
     .Navbar > .nav-items > a:hover{
@@ -107,8 +110,8 @@
   
     .Navbar > .nav-toggle {
       display: flex;
-      width: 50px;
-      height: 50px;
+      width: 5rem;
+      height: 5rem;
       align-items: center;
       justify-content: center;
       cursor: pointer;

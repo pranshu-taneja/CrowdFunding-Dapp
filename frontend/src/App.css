@@ -70,6 +70,7 @@
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-around;
+  z-index: 1;
 }
 
 .create_btn{
