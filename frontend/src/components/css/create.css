@@ -181,7 +181,7 @@ label{
 
     .bar_create{
         flex-direction: column;
-        height: 120vh;
+        height: 150vh;
         width: 60vw;
         justify-content: space-between;
         align-items: center;
@@ -213,5 +213,10 @@ label{
 
     .imageLink{
         width: 14rem;
+    }
+
+    .create_btn{
+        position: relative;
+        bottom: 2rem;
     }
 }
