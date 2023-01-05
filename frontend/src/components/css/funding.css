@@ -98,6 +98,16 @@
     opacity: 0.7;
 }
 
+p.RaisedAmount{
+    display: inline;
+    position: fixed;
+    margin: 11.5rem 8rem 10rem 25rem;
+    top: 7.7rem;
+    font-family: 'poppins';
+    font-size: 1.1rem;
+    color: #252528;
+}
+
 
 @media (max-width: 950px) {
     .FundingProject{
