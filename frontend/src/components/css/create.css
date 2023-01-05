@@ -20,10 +20,31 @@
     border: 1px solid rgba( 255, 255, 255, 0.18 );
 
 }
+
+.create_bar4{
+    display: flex;
+    flex-direction: column;
+    margin: 4rem 0rem;
+}
+
+.imageLink{
+    text-align: left;
+}
+
+.inputURL{
+    width: 12rem;
+    height: 2.5rem;
+    border-radius: 2rem;
+    border: none;
+    padding: 0.2rem 0.9rem;
+    font-family: system-ui;
+    font-size: 1.5rem;
+}
+
 .create_bar3{
     display: flex;
     height: 25rem;
-    width: 36rem;
+    width: 30rem;
     display: flex;
     border-radius: 1rem;
     padding: 0.5rem 1.7rem;;
@@ -102,7 +123,7 @@
     text-indent: 1rem;
 }
 .proj_des{
-    width: 20rem;
+    width: 15rem;
     height: 12rem;
     border-radius: 2rem;
     border: none;
@@ -132,9 +153,27 @@
     margin: 0rem 5rem 2rem 0rem;
 }
 
+.create_btn{
+    padding: 0.6rem 1.9rem;
+    font-size: 1.4rem;
+    border-radius: 1.3rem;
+    background-color: #47ffa6;
+    opacity: 1;
+  }
+  .create_btn:active{
+    opacity: 0.7;
+  }
+  .create_btn:hover{
+    cursor: pointer;
+  }
+
 label{
     color: white;
     font-size: 1.5rem;
+}
+
+.create_btn:disabled{
+    cursor: no-drop;
 }
 
 
@@ -170,5 +209,9 @@ label{
 
     .proj_des{
         width: 12rem;
+    }
+
+    .imageLink{
+        width: 14rem;
     }
 }

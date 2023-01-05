@@ -2,6 +2,7 @@ import FlexProject from "./FlexProject";
 import { v4 as uuidv4 } from "uuid";
 import axios from "axios";
 import React from "react";
+import './css/fund.css'
 import { useState, useEffect } from "react";
 
 function Fund(props) {
@@ -24,18 +25,24 @@ function Fund(props) {
       });
   }, []);
 
-  return (
+  return loading?
+  (
+      <div className="loading_fund">
+        <img className="loadingimg" src="https://www.tsunami.gov/images/loader.gif" alt="loading" />
+        <p className="loadingtxt">Loading...</p>
+      </div>
+  ):
+  (
     <div className="App">
 
       <div className="Projects" id="pro">           {/*//rendering flex projects from db data fetched came through*/}
-        {fetchdata.map((data1) => (
+        {fetchdata.map((data) => (
             <FlexProject
               key={uuidv4()}
               Provider={Provider}
               Signer={Signer}
               Contract={Contract}
-              AccN={data1.acc}
-              dd = {data1}
+              dd = {data}
             ></FlexProject>
         ))}
       </div>

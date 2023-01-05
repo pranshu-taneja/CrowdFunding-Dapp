@@ -1,0 +1,12 @@
+.loadingimg{
+    width: 5rem;
+}
+
+.loadingtxt{
+    color: #1a1a1af5;
+}
+
+.loading_fund{
+    position: relative;
+    top: 20vh;
+}

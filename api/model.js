@@ -9,6 +9,7 @@ const UserSchema = new Schema(
     projdesc:String,
     expdate:String,
     amount:Number,
+    imgLink:String,
     versionKey:false
   }
 );
