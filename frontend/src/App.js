@@ -81,7 +81,11 @@ const connect_metamask = async()=>{
 }
 
   useEffect(() => {             //now this will connect automatically just after page start
-    connect_metamask();
+    connect_metamask().then(() => {
+      console.log("Connected")
+    }).catch(() => {
+      alert(" Please Connect Metamask. \n For testnets you can refer to this website https://faucetlink.to")
+    })
   }, [])
   //------------------- Setting up Provider, Contract & Signer For Functionalities -------------------
 
